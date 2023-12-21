@@ -42,7 +42,7 @@ const questions = [{
 }]
 
 function writeToFile(fileName, data) {
-    console.log("Writing [" + data + "] to file [" + fileName + "]")
+    console.log("Writing " + data + " to file " + fileName + "")
     filesystem.writeFile(fileName, data, function (err) {
         if (err) {
             return console.log(err);
@@ -71,16 +71,16 @@ async function init() {
 		console.log("Invalid user text field detected! Please enter 1-3 Characters, no more and no less");
         return;
 	}
-	console.log("User text: [" + user_text + "]");
+	console.log("User text: " + user_text + "");
 	//user font color
 	user_font_color = answers["text-color"];
-	console.log("User font color: [" + user_font_color + "]");
+	console.log("User font color: " + user_font_color + "");
 	//user shape color
 	user_shape_color = answers["shape-color"];
-	console.log("User shape color: [" + user_shape_color + "]");
+	console.log("User shape color: " + user_shape_color + "");
 	//user shape type
 	user_shape_type = answers["shape"];
-	console.log("User entered shape = [" + user_shape_type + "]");
+	console.log("User entered shape = " + user_shape_type + "");
 	
 	//user shape
 	let user_shape;
@@ -110,7 +110,6 @@ async function init() {
 	//Print shape to log
 	console.log("Displaying shape:\n\n" + svgString);
 	console.log("Shape generation complete!");
-	console.log("Writing shape to file...");
 	writeToFile(svg_file, svgString); 
 }
 init()
